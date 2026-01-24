@@ -10,3 +10,4 @@ spec:
     - protocol: TCP
       port: 80        # The port the world sees
       targetPort: 8080 # The port your app is listening on
+      nodePort: 30080
