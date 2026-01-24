@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-web-app
+spec:
+  replicas: 3  # This is the "Magic" - 3 copies for high availability
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web-container
+        # Use the image you built in Level 2!
+        image: ghcr.io/eyalvoulichman-source/my-first-container:latest
+        ports:
+        - containerPort: 8080
